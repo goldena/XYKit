@@ -7,7 +7,7 @@
 - No need to 'translatesAutoresizingMaskIntoConstraints = false', no need to 'addArrangedSubview()' if you are adding subviews using:
 
 ```swift
-someView.superview(is: view)
+someView.superview(is: view) // I think it is more natural flow when setting up a layout than 'view.addSubview(someView)'
 
 view.subview(is: aView)
 view.subviews(are: anotherView, yetAnotherView)
@@ -48,10 +48,10 @@ imageView.size(width: 32, height: 64, or: .less)
 ### Example 2:
 
 ```swift
-imageView.leading(snapTo: .margin) // Constraint leading anchor of the imageView to the leading margin of the superview
-imageView.centerY() // Center view in superview
+imageView.leading(snapTo: .margin)                          // Constraint leading anchor of the imageView to the leading margin of the superview
+imageView.centerY()                                         // Center view in superview
 
-label.leading(snapTo: gameImageView.trailing).offset(16) // Constraint leading anchor of the label's trailing anchor, plus constant
+label.leading(snapTo: gameImageView.trailing).offset(16)    // Constraint leading anchor of the label's trailing anchor, plus constant
 ```
 
 - As you might have noticed method chaining is available. Keep in mind though that every func in XYKit returns either a view or a constraint(s) as @discardableResult, thus in order to use chaining you have to consider a moment when a view becomes a constraint(s). That is quite easy - it happens when you 'snapTo' or 'center', or change 'size'. In case of doubts feel free to check func type signature.
@@ -59,45 +59,24 @@ label.leading(snapTo: gameImageView.trailing).offset(16) // Constraint leading a
 ### Example 3:
 
 ```swift
-tableView.sidesX(snapTo: .padding(20)) // Constraint sides to leading and trailing anchors of superview with the padding of 20
-tableView.centerX() // Center tableView in superview
+tableView.sidesX(snapTo: .padding(20))          // Constraint horizonstal sides to leading and trailing anchors of superview with the padding of 20
+tableView.centerX()                             // Center tableView in superview
 
-tableView.top(snapTo: .safeArea) // Constraing top anchor of tableView to screen's safe area.
-tableView.bottom(snapTo: self) // Constraint bottom anchor of tableView to superview's bottom anchor
+tableView.top(snapTo: .safeArea)                // Constraing top anchor of tableView to screen's safe area.
+tableView.bottom(snapTo: self)                  // Constraint bottom anchor of tableView to superview's bottom anchor
 ```
 
+### Example 4:
 ```swift
 mainStackView
             .superview(is: self)
-            .subviews(are: titleAndImageStackView, playtimeStackView)
-            .insets(left: 8, top: 8, right: 16, bottom: 16)
-            .spacing(20)
-            .sides(snapTo: .safeArea)
+            .subviews(are: titleStackView, timeStackView)
+            .insets(left: 8, top: 8, right: 16, bottom: 16) // insets for UIStackView
+            .spacing(20)                                    // spacing between arranged subviews inside UIStackView
+            .sides(snapTo: .safeArea)                       // Snap all sides to the screen's safe areas
         
-        titleAndImageStackView
-            .subviews(are: gameTitle, gameImageView)
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(gameImageViewTapped))
-        gameImageView.tappable(with: tap)
-        
-        playtimeStackView
-            .insets(left: 20, right: 20)
-            .subviews(are:
-                playtimeTotalStackView,
-                playtimeWindowsStackView,
-                playtimeMacStackView,
-                playtimeLinuxStackView,
-                playtimeSegmentedControl
-            )
-                
-        playtimeSegmentedControl.addTarget(self, action: #selector(playtimeSegmentedControlValueChanged), for: .valueChanged)
-        
-        playtimeTotalStackView
-            .subviews(are: playtimeTotalTitle, playtimeTotalLabel)
-        playtimeWindowsStackView
-            .subviews(are: playtimeWindowsTitle, playtimeWindowsLabel)
-        playtimeMacStackView
-            .subviews(are: playtimeMacTitle, playtimeMacLabel)
-        playtimeLinuxStackView
-            .subviews(are: playtimeLinuxTitle, playtimeLinuxLabel)
+let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
+imageView.tappable(with: tap)                               // Another extension for UIView                
 ```
+
+Disclamer: this is my first take on the XYKit, there is a lot of space for refactoring, improvement and no doubt - some bugs. Any contributions, suggestions, pull requests are welcomed.
