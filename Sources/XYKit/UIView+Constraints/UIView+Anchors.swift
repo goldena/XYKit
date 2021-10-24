@@ -21,4 +21,16 @@ public extension UIView {
 
     var centerY: NSLayoutYAxisAnchor { centerYAnchor }
     
+    var width: NSLayoutDimension { widthAnchor }
+    
+    var height: NSLayoutDimension { heightAnchor }
+    
+    var left: NSLayoutXAxisAnchor { leftAnchor }
+    
+    var right: NSLayoutXAxisAnchor { rightAnchor }
+    
+    var firstBaseline: NSLayoutYAxisAnchor { firstBaselineAnchor }
+    
+    var lastBaseline: NSLayoutYAxisAnchor { lastBaselineAnchor }
+    
 }

@@ -10,8 +10,6 @@ import UIKit
 extension UIView {
     
     var rootSuperview: UIView {
-        translatesAutoresizingMaskIntoConstraints = false
-
         var view = self
         
         while view.superview != nil {
@@ -25,10 +23,8 @@ extension UIView {
         return view
     }
     
-    #warning("test")
+    #warning("Should be thoroughly tested")
     func firstCommonSuperview(with view: UIView) -> UIView? {
-        translatesAutoresizingMaskIntoConstraints = false
-
         var viewsHierarchy = [self]
 
         func nextSuperview(_ viewsHierarchy: [UIView]) -> UIView? {

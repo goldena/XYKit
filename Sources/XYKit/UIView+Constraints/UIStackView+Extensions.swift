@@ -10,7 +10,7 @@ import UIKit
 public extension UIView {
     
     @discardableResult
-    func insets(allSides: CGFloat) -> UIView {
+    func insets(_ allSides: CGFloat) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
 
         guard let stackView = self as? UIStackView else {

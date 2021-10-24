@@ -11,8 +11,6 @@ public extension UIView {
     
     @discardableResult
     func tappable(with tapRecognizer: UITapGestureRecognizer) -> UIView {
-        translatesAutoresizingMaskIntoConstraints = false
-
         isUserInteractionEnabled = true
 
         addGestureRecognizer(tapRecognizer)

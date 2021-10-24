@@ -9,12 +9,18 @@ import UIKit
 
 public extension Array where Element: NSLayoutConstraint {
     
-    func activate() {
+    @discardableResult
+    func activate() -> [NSLayoutConstraint] {
         NSLayoutConstraint.activate(self)
+        
+        return self
     }
     
-    func deactivate() {
+    @discardableResult
+    func deactivate() -> [NSLayoutConstraint] {
         NSLayoutConstraint.deactivate(self)
+        
+        return self
     }
     
 }

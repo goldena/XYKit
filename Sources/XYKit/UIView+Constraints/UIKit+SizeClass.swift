@@ -7,6 +7,7 @@
 
 import UIKit
 
+#warning("No tests yet")
 public extension UIView {
 
     var isCompactWidth: Bool {

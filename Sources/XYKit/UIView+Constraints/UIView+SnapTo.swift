@@ -166,6 +166,117 @@ public extension UIView {
         return constraint
     }
     
+    // MARK: - FirstBaseline constraints
+    
+    @discardableResult
+    func firstBaseline(snapTo anchorY: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let constraint = firstBaselineAnchor.constraint(equalTo: anchorY)
+        
+        constraint.isActive = true
+        return constraint
+    }
+    
+    @discardableResult
+    func firstBaseline(snapTo view: UIView) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let constraint = firstBaselineAnchor.constraint(equalTo: view.firstBaselineAnchor)
+        
+        constraint.isActive = true
+        return constraint
+    }
+    
+    @discardableResult
+    func firstBaseline(snapTo limits: Limits) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let constraint: NSLayoutConstraint
+        
+        switch limits {
+        case .safeArea:
+            #warning("Not sure about that one yet")
+            constraint = firstBaselineAnchor.constraint(equalTo: rootSuperview.safeAreaLayoutGuide.topAnchor)
+            
+        case .margin:
+            let margin = directionalLayoutMargins.top
+            
+            if let superview = superview {
+                constraint = firstBaselineAnchor.constraint(equalTo: superview.topAnchor, constant: margin)
+            } else {
+                print("View \(String(describing: self)) has no superview to be snapped to firstBaselineAnchor + margin, returning an empty constraint")
+                return NSLayoutConstraint()
+            }
+            
+        case .padding(let padding):
+            if let superview = superview {
+                constraint = firstBaselineAnchor.constraint(equalTo: superview.topAnchor, constant: padding)
+            } else {
+                print("View \(String(describing: self)) has no superview to be snapped to firstBaselineAnchor + padding, returning an empty constraint")
+                return NSLayoutConstraint()
+            }
+        }
+        
+        constraint.isActive = true
+        return constraint
+    }
+    
+    // MARK: - LastBaseline constraints
+    
+    @discardableResult
+    func lastBaseline(snapTo anchorY: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let constraint = lastBaselineAnchor.constraint(equalTo: anchorY)
+        
+        constraint.isActive = true
+        return constraint
+    }
+    
+    @discardableResult
+    func lastBaseline(snapTo view: UIView) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let constraint = lastBaselineAnchor.constraint(equalTo: view.lastBaselineAnchor)
+        
+        constraint.isActive = true
+        return constraint
+    }
+
+    @discardableResult
+    func lastBaseline(snapTo limits: Limits) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let constraint: NSLayoutConstraint
+        
+        switch limits {
+        case .safeArea:
+            constraint = lastBaselineAnchor.constraint(equalTo: rootSuperview.safeAreaLayoutGuide.bottomAnchor)
+            
+        case .margin:
+            let margin = directionalLayoutMargins.bottom
+            
+            if let superview = superview {
+                constraint = lastBaselineAnchor.constraint(equalTo: superview.bottomAnchor, constant: -margin)
+            } else {
+                print("View \(String(describing: self)) has no superview to be snapped to lastBaselineAnchor - margin, returning an empty constraint")
+                return NSLayoutConstraint()
+            }
+            
+        case .padding(let padding):
+            if let superview = superview {
+                constraint = lastBaseline.constraint(equalTo: superview.bottomAnchor, constant: -padding)
+            } else {
+                print("View \(String(describing: self)) has no superview to be snapped to lastBaselineAnchor - padding, returning an empty constraint")
+                return NSLayoutConstraint()
+            }
+        }
+        
+        constraint.isActive = true
+        return constraint
+    }
+
     // MARK: - Bottom constraints
     
     @discardableResult
