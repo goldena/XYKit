@@ -1,14 +1,14 @@
 //
-//  UIViewLeadingSnapToTests.swift
+//  File.swift
 //  
 //
-//  Created by Denis Goloborodko on 24.10.21.
+//  Created by Denis Goloborodko on 25.10.21.
 //
 
 import XCTest
 @testable import XYKit
 
-final class UIViewSnapToLeadingTests: XCTestCase {
+final class UIViewSnapToBottomTests: XCTestCase {
     
     // MARK: - SUT
     
@@ -46,53 +46,54 @@ final class UIViewSnapToLeadingTests: XCTestCase {
         try super.tearDownWithError()
     }
     
-    func test_snapTo_leading_anchor() {
-        sut = view1.leading(snapTo: view2.leading)
+    func test_snapTo_bottom_anchor() {
+        sut = view1.bottom(snapTo: view2.bottom)
         
-        let constraint = view1.leadingAnchor.constraint(equalTo: view2.leadingAnchor)
+        let constraint = view1.bottomAnchor.constraint(equalTo: view2.bottomAnchor)
         constraint.isActive = true
                         
         XCTAssertTrue(sut.isTheSameConstraint(as: constraint))
     }
     
-    func test_snapTo_leading_view() {
-        sut = view1.leading(snapTo: view2)
+    func test_snapTo_bottom_view() {
+        sut = view1.bottom(snapTo: view2)
         
-        let constraint = view1.leadingAnchor.constraint(equalTo: view2.leadingAnchor)
+        let constraint = view1.bottomAnchor.constraint(equalTo: view2.bottomAnchor)
         constraint.isActive = true
                         
         XCTAssertTrue(sut.isTheSameConstraint(as: constraint))
     }
     
-    func test_snapTo_leading_safeArea() {
+    func test_snapTo_bottom_safeArea() {
         view1.addSubview(view2)
         
-        sut = view2.leading(snapTo: .safeArea)
+        sut = view2.bottom(snapTo: .safeArea)
         
-        let constraint = view2.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor)
+        let constraint = view2.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
         constraint.isActive = true
                         
         XCTAssertTrue(sut.isTheSameConstraint(as: constraint))
     }
 
-    func test_snapTo_leading_margin() {
-        sut = view1.leading(snapTo: .margin)
+    func test_snapTo_bottom_margin() {
+        sut = view1.bottom(snapTo: .margin)
         
-        let margin = view1.directionalLayoutMargins.leading
-        let constraint = view1.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: margin)
+        let margin = view1.directionalLayoutMargins.trailing
+        let constraint = view1.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -margin)
         constraint.isActive = true
                         
         XCTAssertTrue(sut.isTheSameConstraint(as: constraint))
     }
     
-    func test_snapTo_leading_padding() {
-        sut = view1.leading(snapTo: .padding(20))
+    func test_snapTo_bottom_padding() {
+        sut = view1.bottom(snapTo: .padding(20))
         
-        let constraint = view1.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20)
+        let constraint = view1.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -20)
         constraint.isActive = true
                         
         XCTAssertTrue(sut.isTheSameConstraint(as: constraint))
     }
     
 }
+
 
