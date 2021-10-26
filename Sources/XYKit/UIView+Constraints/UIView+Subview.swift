@@ -14,13 +14,18 @@ public extension UIView {
     func superview(is view: UIView) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
+        guard view !== self else {
+            print("!! \(String(describing: self)) cannot become a subview of itself")
+            return self
+        }
+        
         guard view !== superview else {
-            print("\(String(describing: self)) is already a subview of \(String(describing: view))")
+            print("!! \(String(describing: self)) is already a subview of \(String(describing: view))")
             return self
         }
         
 #if DEBUG
-        print(" -! \(String(describing: self)) was moved from \(String(describing: superview)) to \(String(describing:view))")
+        print("-! \(String(describing: self)) was moved from \(String(describing: superview)) to \(String(describing:view))")
 #endif
         
         guard let stackView = view as? UIStackView else {
