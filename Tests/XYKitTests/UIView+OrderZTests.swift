@@ -49,7 +49,7 @@ final class UIViewOrderZTests: XCTestCase {
     func test_OrderZ_front() {
         sut = mainView.subviews.firstIndex(of: view2)
         
-        view2.orderZ(snapTo: .back)
+        view2.orderZ(.back)
         
         XCTAssertNotEqual(sut, mainView.subviews.firstIndex(of: view2))
     }
@@ -57,11 +57,25 @@ final class UIViewOrderZTests: XCTestCase {
     func test_orderZ_back() {
         sut = mainView.subviews.firstIndex(of: view1)
         
-        view1.orderZ(snapTo: .front)
+        view1.orderZ(.front)
         
         XCTAssertNotEqual(sut, mainView.subviews.firstIndex(of: view1))
     }
     
-    #warning("Got to test additional cases")
+    func test_orderZ_over_view() {
+        sut = mainView.subviews.firstIndex(of: view1)
+        
+        view1.orderZ(.above(view2))
+        
+        XCTAssertNotEqual(sut, mainView.subviews.firstIndex(of: view1))
+    }
+    
+    func test_OrderZ_below_view() {
+        sut = mainView.subviews.firstIndex(of: view2)
+        
+        view2.orderZ(.below(view1))
+        
+        XCTAssertNotEqual(sut, mainView.subviews.firstIndex(of: view2))
+    }
     
 }

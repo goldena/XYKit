@@ -3,7 +3,7 @@ import UIKit
 public extension UIView {
     
     @discardableResult
-    func orderZ(snapTo order: Order) -> UIView {
+    func orderZ(_ order: Order) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
 
         guard let superview = superview else {
@@ -19,57 +19,13 @@ public extension UIView {
         case .back:
             superview.sendSubviewToBack(self)
             
-        case .over(let view):
-            guard let indexOfSelf = superview.indexOfSubview(self),
-                  let indexOfView = superview.indexOfSubview(view) else {
-                print("!! \(String(describing: view)) has a superview other than \(String(describing: self))")
-                      
-                return self
-            }
+        case .above(let view):
+            superview.insertSubview(self, aboveSubview: view)
             
-            guard indexOfSelf != indexOfView else {
-                print("!! Trying to change the order of views on self \(String(describing: self))")
-                
-                return self
-            }
+        case .below(let view):
+            superview.insertSubview(self, belowSubview: view)
+        }
             
-            guard indexOfSelf < indexOfView else {
-                print("!! The \(String(describing: self)) is already above \(String(describing: view))")
-                
-                return self
-            }
-
-            #warning("What about constraints???")
-            
-            superview.subviews.remove(at: indexOfSelf)
-            superview.subviews.insert(self, at: indexOfView)
-            
-        case .under(let view):
-        case .over(let view):
-            guard let indexOfSelf = superview.indexOfSubview(self),
-                  let indexOfView = superview.indexOfSubview(view) else {
-                print("!! \(String(describing: view)) has a superview other than \(String(describing: self))")
-                      
-                return self
-            }
-            
-            guard indexOfSelf != indexOfView else {
-                print("!! Trying to change the order of views on self \(String(describing: self))")
-                
-                return self
-            }
-            
-            guard indexOfSelf > indexOfView else {
-                print("!! The \(String(describing: self)) is already under \(String(describing: view))")
-                
-                return self
-            }
-
-            #warning("What about constraints???")
-            
-            superview.subviews.remove(at: indexOfSelf)
-            superview.subviews.insert(self, at: indexOfView)
-
         return self
     }
     

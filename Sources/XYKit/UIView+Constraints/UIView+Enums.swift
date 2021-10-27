@@ -9,8 +9,8 @@ public extension UIView {
     
     enum Order {
         case front
-        case over(_ view: UIView)
-        case under(_ view: UIView)
+        case above(_ view: UIView)
+        case below(_ view: UIView)
         case back
     }
     
