@@ -1,7 +1,6 @@
 //
 //  UIView+SnapToTrailingTests.swift
 //  
-//
 //  Created by Denis Goloborodko on 25.10.21.
 //
 

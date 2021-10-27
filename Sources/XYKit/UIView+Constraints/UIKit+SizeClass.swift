@@ -1,13 +1,11 @@
 //
 //  UIKit+SizeClass.swift
-//  XYKit
 //
 //  Created by Denis Goloborodko on 15.10.21.
 //
 
 import UIKit
 
-#warning("No tests yet")
 public extension UIView {
 
     var isCompactWidth: Bool {

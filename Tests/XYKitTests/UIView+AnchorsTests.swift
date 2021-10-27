@@ -1,7 +1,6 @@
 //
-//  File.swift
+//  UIView+AnchorsTests.swift
 //  
-//
 //  Created by Denis Goloborodko on 24.10.21.
 //
 

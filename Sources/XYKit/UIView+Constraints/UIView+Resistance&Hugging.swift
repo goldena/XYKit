@@ -1,6 +1,5 @@
 //
-//  UIView+Extensions(Resistance&Hugging).swift
-//  Onboarding&Login
+//  UIView+Resistance&Hugging.swift
 //
 //  Created by Denis Goloborodko on 5.10.21.
 //

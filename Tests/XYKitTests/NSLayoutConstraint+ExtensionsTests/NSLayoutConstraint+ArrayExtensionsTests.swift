@@ -1,7 +1,6 @@
 //
-//  NSLayoutConstraintArrayExtensionsTests.swift
+//  NSLayoutConstraint+ArrayExtensionsTests.swift
 //  
-//
 //  Created by Denis Goloborodko on 24.10.21.
 //
 

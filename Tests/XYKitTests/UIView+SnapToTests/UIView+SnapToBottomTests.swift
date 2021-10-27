@@ -1,7 +1,6 @@
 //
 //  UIView+SnapToFirstBaselineTests.swift
 //  
-//
 //  Created by Denis Goloborodko on 25.10.21.
 //
 

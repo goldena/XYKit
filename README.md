@@ -7,7 +7,7 @@
 - No need to 'translatesAutoresizingMaskIntoConstraints = false', no need to 'addArrangedSubview()' if you are adding subviews using:
 
 ```swift
-someView.superview(is: view) // I think it is more natural flow when setting up a layout than 'view.addSubview(someView)'
+someView.superview(is: view) // Which I consider more natural than 'view.addSubview(someView)'
 
 view.subview(is: aView)
 view.subviews(are: anotherView, yetAnotherView)
@@ -16,7 +16,7 @@ view.subviews(are: anotherView, yetAnotherView)
 ### Example 1:
 
 ```swift
-// Vanilla:
+// UIKit:
 view.addSubview(label)
 label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -33,8 +33,6 @@ imageView.width(32)
 imageView.height(64)
 
 // Or even shorter:
-view.subviews(are: label, imageView)
-
 imageView.size(width: 32, height: 64)
 
 // What if constraints were inequalities like these:
@@ -59,10 +57,10 @@ label.leading(snapTo: gameImageView.trailing).offset(16)    // Constraint leadin
 ### Example 3:
 
 ```swift
-tableView.sidesX(snapTo: .padding(20))          // Constraint horizonstal sides to leading and trailing anchors of superview with the padding of 20
+tableView.sidesX(snapTo: .padding(20))          // Constraint horizontal sides to leading and trailing anchors of superview with the padding of 20
 tableView.centerX()                             // Center tableView in superview
 
-tableView.top(snapTo: .safeArea)                // Constraing top anchor of tableView to screen's safe area.
+tableView.top(snapTo: .safeArea)                // Constraint top anchor of tableView to screen's safe area.
 tableView.bottom(snapTo: self)                  // Constraint bottom anchor of tableView to superview's bottom anchor
 ```
 
@@ -79,4 +77,4 @@ let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped
 imageView.tappable(with: tap)                               // Another extension for UIView                
 ```
 
-Disclamer: this is my first take on the XYKit, there is a lot of space for refactoring, improvement and no doubt - some bugs. Any contributions, suggestions, pull requests are welcomed.
+##Disclaimer: this is my initial take on the XYKit, there is a lot of space for refactoring, improvements and no doubt - some bugs to be found and squashed. Contributions, suggestions, pull requests are welcomed and encouraged.

@@ -1,6 +1,5 @@
 //
 //  UIView+Compression&Hugging.swift
-//  Onboarding&Login
 //
 //  Created by Denis Goloborodko on 7.10.21.
 //

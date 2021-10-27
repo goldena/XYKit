@@ -1,6 +1,5 @@
 //
 //  UIView+Visibility.swift
-//  XYKit
 //
 //  Created by Denis Goloborodko on 22.10.21.
 //

@@ -1,5 +1,5 @@
 //
-//  UIView+Extensions.swift
+//  UIView+Center.swift
 //
 //  Created by Denis Goloborodko on 5.10.21.
 //

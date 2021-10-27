@@ -1,6 +1,5 @@
 //
 //  UIView+Superview.swift
-//  Do I own this game
 //
 //  Created by Denis Goloborodko on 13.10.21.
 //

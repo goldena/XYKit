@@ -1,7 +1,6 @@
 //
-//  UIStackViewExtensionsTests.swift
+//  UIStackView+ExtensionsTests.swift
 //  
-//
 //  Created by Denis Goloborodko on 24.10.21.
 //
 

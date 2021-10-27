@@ -1,6 +1,5 @@
 //
-//  UIView+Margins.swift
-//  XYKit
+//  UIStackView+Extensions.swift
 //
 //  Created by Denis Goloborodko on 14.10.21.
 //

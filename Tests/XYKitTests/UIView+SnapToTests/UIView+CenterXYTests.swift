@@ -1,7 +1,6 @@
 //
-//  UIViewCenterXYTests.swift
+//  UIView+CenterXYTests.swift
 //  
-//
 //  Created by Denis Goloborodko on 26.10.21.
 //
 

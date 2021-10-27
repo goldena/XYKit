@@ -1,5 +1,5 @@
 //
-//  UIStackView+Extensions.swift
+//  UIStackView+ConvenienceInit.swift
 //
 //  Created by Denis Goloborodko on 5.10.21.
 //

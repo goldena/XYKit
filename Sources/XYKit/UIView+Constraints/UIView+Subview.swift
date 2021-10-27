@@ -1,5 +1,5 @@
 //
-//  UIView+subview.swift
+//  UIView+Subview.swift
 //
 //  Created by Denis Goloborodko on 5.10.21.
 //

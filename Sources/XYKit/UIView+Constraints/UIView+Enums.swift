@@ -1,3 +1,9 @@
+//
+//  UIView+Enums.swift
+//
+//  Created by Denis Goloborodko on 7.10.21.
+//
+
 import UIKit
 
 public extension UIView {

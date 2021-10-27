@@ -1,6 +1,5 @@
 //
 //  NSLayoutConstraintArray+Extensions.swift
-//  XYKit
 //
 //  Created by Denis Goloborodko on 15.10.21.
 //

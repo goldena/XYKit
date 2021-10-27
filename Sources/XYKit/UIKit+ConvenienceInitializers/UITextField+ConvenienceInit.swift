@@ -1,5 +1,5 @@
 //
-//  UITextField+Extensions.swift
+//  UITextField+ConvenienceInit.swift
 //
 //  Created by Denis Goloborodko on 5.10.21.
 //
