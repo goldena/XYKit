@@ -59,7 +59,7 @@ imageView.size(width: 32, height: 64, or: .less)
 imageView.leading(snapTo: .margin)                          // Constraint leading anchor of the imageView to the leading margin of the superview
 imageView.centerY()                                         // Center view in superview
 
-label.leading(snapTo: gameImageView.trailing).offset(16)    // Constraint leading anchor of the label's trailing anchor, plus constant
+label.leading(snapTo: imageView.trailing).offset(16)        // Constraint leading anchor of the label's trailing anchor, plus constant
 ```
 
 - As you might have noticed method chaining is available. Keep in mind though that every func in XYKit returns either a view or a constraint(s) as @discardableResult, thus in order to use chaining you have to consider a moment when a view becomes a constraint(s). That is quite easy - it happens when you 'snapTo' or 'center', or change 'size'. In case of doubts feel free to check func type signature.
