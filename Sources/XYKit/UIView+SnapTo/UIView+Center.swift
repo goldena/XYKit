@@ -14,8 +14,6 @@ public extension UIView {
     
     @discardableResult
     func centerX(snapTo view: UIView? = nil) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         var constraint: NSLayoutConstraint
         
         if let view = view {
@@ -36,8 +34,6 @@ public extension UIView {
     
     @discardableResult
     func centerX(snapTo anchorX: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraint = centerXAnchor.constraint(equalTo: anchorX)
         
         constraint.isActive = true
@@ -48,8 +44,6 @@ public extension UIView {
     
     @discardableResult
     func centerY(snapTo view: UIView? = nil) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         var constraint: NSLayoutConstraint
         
         if let view = view {
@@ -70,8 +64,6 @@ public extension UIView {
     
     @discardableResult
     func centerY(snapTo anchorY: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraint = centerYAnchor.constraint(equalTo: anchorY)
         
         constraint.isActive = true

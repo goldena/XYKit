@@ -10,8 +10,6 @@ public extension UIView {
     
     @discardableResult
     func orderZ(_ order: Order) -> UIView {
-        translatesAutoresizingMaskIntoConstraints = false
-
         guard let superview = superview else {
             print("View \(String(describing: self)) has no superview to change its order in")
             

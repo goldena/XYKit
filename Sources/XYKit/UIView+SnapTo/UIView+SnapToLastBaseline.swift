@@ -13,8 +13,6 @@ public extension UIView {
     
     @discardableResult
     func lastBaseline(snapTo anchorY: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraint = lastBaselineAnchor.constraint(equalTo: anchorY)
         
         constraint.isActive = true
@@ -23,8 +21,6 @@ public extension UIView {
     
     @discardableResult
     func lastBaseline(snapTo view: UIView) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraint = lastBaselineAnchor.constraint(equalTo: view.lastBaselineAnchor)
         
         constraint.isActive = true
@@ -33,8 +29,6 @@ public extension UIView {
 
     @discardableResult
     func lastBaseline(snapTo limits: Limits) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraint: NSLayoutConstraint
         
         switch limits {

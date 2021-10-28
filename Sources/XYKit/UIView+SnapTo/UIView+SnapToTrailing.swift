@@ -13,8 +13,6 @@ public extension UIView {
     
     @discardableResult
     func trailing(snapTo anchorX: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-        
         let constraint = trailingAnchor.constraint(equalTo: anchorX)
         
         constraint.isActive = true
@@ -23,8 +21,6 @@ public extension UIView {
     
     @discardableResult
     func trailing(snapTo view: UIView) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-        
         let constraint = trailingAnchor.constraint(equalTo: view.trailingAnchor)
         
         constraint.isActive = true
@@ -33,8 +29,6 @@ public extension UIView {
     
     @discardableResult
     func trailing(snapTo limits: Limits) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-        
         let constraint: NSLayoutConstraint
         
         switch limits {

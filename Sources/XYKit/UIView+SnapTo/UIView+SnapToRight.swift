@@ -13,8 +13,6 @@ public extension UIView {
     
     @discardableResult
     func right(snapTo anchorX: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-                
         let constraint = rightAnchor.constraint(equalTo: anchorX)
         
         constraint.isActive = true
@@ -23,8 +21,6 @@ public extension UIView {
     
     @discardableResult
     func right(snapTo view: UIView) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-        
         let constraint = rightAnchor.constraint(equalTo: view.rightAnchor)
         
         constraint.isActive = true
@@ -33,8 +29,6 @@ public extension UIView {
     
     @discardableResult
     func right(snapTo limits: Limits) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-        
         let constraint: NSLayoutConstraint
         
         switch limits {

@@ -12,8 +12,6 @@ public extension UIView {
     
     @discardableResult
     func resistanceX(_ priority: UILayoutPriority) -> UIView {
-        translatesAutoresizingMaskIntoConstraints = false
-
         setContentCompressionResistancePriority(priority, for: .horizontal)
         
         return self
@@ -21,8 +19,6 @@ public extension UIView {
     
     @discardableResult
     func resistanceY(_ priority: UILayoutPriority) -> UIView {
-        translatesAutoresizingMaskIntoConstraints = false
-
         setContentCompressionResistancePriority(priority, for: .vertical)
         
         return self
@@ -41,8 +37,6 @@ public extension UIView {
     
     @discardableResult
     func huggingX(_ priority: UILayoutPriority) -> UIView {
-        translatesAutoresizingMaskIntoConstraints = false
-
         setContentHuggingPriority(priority, for: .horizontal)
         
         return self
@@ -50,8 +44,6 @@ public extension UIView {
     
     @discardableResult
     func huggingY(_ priority: UILayoutPriority) -> UIView {
-        translatesAutoresizingMaskIntoConstraints = false
-
         setContentHuggingPriority(priority, for: .vertical)
         
         return self

@@ -12,8 +12,6 @@ public extension UIView {
     
     @discardableResult
     func width(_ constant: CGFloat, or equation: Equation? = nil) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraintX: NSLayoutConstraint
         
         if let equation = equation {
@@ -34,8 +32,6 @@ public extension UIView {
     
     @discardableResult
     func width(snapTo width: NSLayoutDimension, or equation: Equation? = nil, ratio: CGFloat = 1.0) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraintX: NSLayoutConstraint
         
         if let equation = equation {
@@ -56,8 +52,6 @@ public extension UIView {
     
     @discardableResult
     func width(snapTo view: UIView, or equation: Equation? = nil, ratio: CGFloat = 1.0) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraintX: NSLayoutConstraint
         
         if let equation = equation {
@@ -77,8 +71,6 @@ public extension UIView {
     }
 
     func width(snapTo limits: Limits) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraint: NSLayoutConstraint
         
         switch limits {
@@ -112,8 +104,6 @@ public extension UIView {
     
     @discardableResult
     func height(_ constant: CGFloat, or equation: Equation? = nil) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraintY: NSLayoutConstraint
         
         if let equation = equation {
@@ -134,8 +124,6 @@ public extension UIView {
     
     @discardableResult
     func height(snapTo height: NSLayoutDimension, or equation: Equation? = nil, ratio: CGFloat = 1.0) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraintY: NSLayoutConstraint
         
         if let equation = equation {
@@ -156,8 +144,6 @@ public extension UIView {
     
     @discardableResult
     func height(snapTo view: UIView, or equation: Equation? = nil, ratio: CGFloat = 1.0) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraintY: NSLayoutConstraint
         
         if let equation = equation {
@@ -178,8 +164,6 @@ public extension UIView {
 
     @discardableResult
     func height(snapTo limits: Limits) -> NSLayoutConstraint {
-        translatesAutoresizingMaskIntoConstraints = false
-
         let constraint: NSLayoutConstraint
         
         switch limits {

@@ -13,8 +13,6 @@ public extension UIView {
             contentCompressionResistancePriority(for: .horizontal)
         }
         set {
-            translatesAutoresizingMaskIntoConstraints = false
-            
             setContentCompressionResistancePriority(newValue, for: .horizontal)
         }
     }
@@ -24,8 +22,6 @@ public extension UIView {
             contentCompressionResistancePriority(for: .vertical)
         }
         set {
-            translatesAutoresizingMaskIntoConstraints = false
-
             setContentCompressionResistancePriority(newValue, for: .vertical)
         }
     }
@@ -35,8 +31,6 @@ public extension UIView {
             contentHuggingPriority(for: .horizontal)
         }
         set {
-            translatesAutoresizingMaskIntoConstraints = false
-
             setContentCompressionResistancePriority(newValue, for: .horizontal)
         }
     }
@@ -46,8 +40,6 @@ public extension UIView {
             contentHuggingPriority(for: .vertical)
         }
         set {
-            translatesAutoresizingMaskIntoConstraints = false
-
             setContentCompressionResistancePriority(newValue, for: .vertical)
         }
     }
