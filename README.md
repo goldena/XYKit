@@ -82,10 +82,21 @@ mainStackView
             .subviews(are: titleStackView, timeStackView)
             .insets(left: 8, top: 8, right: 16, bottom: 16) // insets for UIStackView
             .spacing(20)                                    // spacing between arranged subviews inside UIStackView
-            .sides(snapTo: .safeArea)                       // Snap all sides to the screen's safe areas
-        
-let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
-imageView.tappable(with: tap)                               // Another extension for UIView                
+            .sides(snapTo: .safeArea)                       // Snap all sides to the screen's safe areas               
 ```
 
-##Disclaimer: this is my initial take on the XYKit, there is a lot of space for refactoring, improvements and no doubt - some bugs to be found and squashed. Contributions, suggestions, pull requests are welcomed and encouraged.
+### Extension for UIView:
+```swift
+let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
+
+imageView.tappable(with: tap)
+```
+
+### Extension for UITextView:
+```swift
+textView
+    .adjustableForKeyboard()
+    .withDoneButton()               
+```
+
+## Disclaimer: this is my initial take on the XYKit, there is a lot of space for refactoring, improvements and no doubt - some bugs to be found and squashed. Contributions, suggestions, pull requests are welcomed and encouraged.
