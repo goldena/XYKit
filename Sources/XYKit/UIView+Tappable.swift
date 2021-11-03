@@ -9,10 +9,11 @@ import UIKit
 public extension UIView {
     
     @discardableResult
-    func tappable(with tapRecognizer: UITapGestureRecognizer) -> UIView {
+    func tappable(with selector: Selector) -> UIView {
         isUserInteractionEnabled = true
 
-        addGestureRecognizer(tapRecognizer)
+        let tap = UITapGestureRecognizer(target: rootSuperview, action: selector)
+        addGestureRecognizer(tap)
 
         return self
     }
