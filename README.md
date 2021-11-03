@@ -87,9 +87,7 @@ mainStackView
 
 ### Extension for UIView:
 ```swift
-let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
-
-imageView.tappable(with: tap)
+imageView.tappable(with: #selector(imageViewTapped))
 ```
 
 ### Extension for UITextView:
