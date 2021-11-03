@@ -3,12 +3,13 @@
 ## Swifty and convenient domain specific language for creating programmatic UI in a more declarative way and more than that. Built on top of UIKit using extensions-only minimalistic approach.
 
 Installation using Swift Package Manager:
-- 1. Open your project in Xcode or make a new one
-- 2. Select it it at the top of the Project Navigator (left panel with file structure of your project)
-- 3. Switch to Package Dependencies tab
-- 4. Tap plus to add a new dependancy
-- 5. In the top rightmost corner of the window paste this link https://github.com/goldena/XYKit into the search field
-- 6. You can tap twice on the newly added dependency to choose its update rules. The best approach in terms of maintainability is to select Version rules, for example from 2.0.0 till 3.0.0 to make sure a new major version of the dependency will not have any API breaking changes.
+1. Open your project in Xcode or make a new one
+2. Select it it at the top of the Project Navigator (left panel with file structure of your project)
+3. Switch to Package Dependencies tab
+4. Tap plus to add a new dependancy
+5. In the top rightmost corner of the window paste this link https://github.com/goldena/XYKit into the search field
+6. You can tap twice on the newly added dependency to choose its update rules. The best approach in terms of maintainability is to select Version rules, for example from 2.0.0 till 3.0.0 to make sure a new major version of the dependency will not have any API breaking changes.
+7. Add 'import XYKit' in the files where there is 'import UIKit'
 
 ## Features:
 
