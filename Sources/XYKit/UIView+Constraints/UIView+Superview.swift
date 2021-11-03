@@ -6,7 +6,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     var rootSuperview: UIView {
         var view = self

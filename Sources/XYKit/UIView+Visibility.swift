@@ -9,14 +9,14 @@ import UIKit
 extension UIView {
     
     @discardableResult
-    func hide() -> UIView {
+    func hidden() -> UIView {
         isHidden = true
         
         return self
     }
 
     @discardableResult
-    func show() -> UIView {
+    func visible() -> UIView {
         isHidden = false
         
         return self
