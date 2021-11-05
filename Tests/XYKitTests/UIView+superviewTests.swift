@@ -46,16 +46,6 @@ final class UIViewSuperviewTests: XCTestCase {
         
         try super.tearDownWithError()
     }
-
-    func test_view_cannot_become_superview_of_itself() {
-        view1.superview(is: view1)
-        
-        XCTAssertIdentical(view1.superview, mainView)
-        
-        view2.superview(is: view2)
-        
-        XCTAssertIdentical(view2.superview, stackView)
-    }
     
     func test_view_is_already_subview_of_this_superview() {
         view1.superview(is: mainView)
